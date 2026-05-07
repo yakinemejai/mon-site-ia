@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Écrin | Haute Bijouterie & Objets d'Exception</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --black-pearl: #1a1a1a;
+            --silk: #f9f7f2;
+            --charcoal: #333333;
+            --transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-pearl);
+            color: var(--silk);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- PRELOADER ANIMATION --- */
+        .reveal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--silk);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideUp 1.5s ease-in-out forwards;
+            animation-delay: 1s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100%); }
+        }
+
+        .reveal-text {
+            color: var(--black-pearl);
+            font-size: 2rem;
+            letter-spacing: 5px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeInOut 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.1); }
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 40px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--silk);
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, #2a2a2a 0%, #1a1a1a 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            filter: grayscale(40%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-content span {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .hero-content h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .btn-discover {
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            transition: var(--transition);
+        }
+
+        .btn-discover:hover {
+            background: var(--gold);
+            color: var(--black-pearl);
+        }
+
+        /* --- COLLECTION --- */
+        .collection {
+            padding: 150px 10%;
+            background: var(--silk);
+            color: var(--black-pearl);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .section-title h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title div {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 80px;
+        }
+
+        .item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .item-img {
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            transition: var(--transition);
+        }
+
+        .item:hover .item-img {
+            transform: scale(1.05);
+        }
+
+        .item-info {
+            padding: 30px 0;
+        }
+
+        .item-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+        }
+
+        /* --- INTERACTIVE ELEMENTS --- */
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.1s ease-out;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 100px 10%;
+            text-align: center;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--gold);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reveal">
+        <div class="reveal-text">L'Écrin</div>
+    </div>
+
+    <div class="cursor-follower" id="cursor"></div>
+
+    <nav>
+        <div class="logo">L'ÉCRIN</div>
+        <div class="nav-links">
+            <a href="#">Héritage</a>
+            <a href="#">Collections</a>
+            <a href="#">Atelier</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span>Depuis 1924</span>
+            <h1>L'Essence de la Préciosité</h1>
+            <p>Des créations uniques qui capturent l'éclat de l'âme et la finesse du temps.</p>
+            <a href="#" class="btn-discover">Découvrir la collection</a>
+        </div>
+    </section>
+
+    <section class="collection">
+        <div class="section-title">
+            <h2>Nos Pièces Maîtresses</h2>
+            <div></div>
+        </div>
+
+        <div class="grid">
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1584302174870-b70b28bcc682?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="item-info">
+                    <h3>Le Saphir d'Orient</h3>
+                    <p>Bague en platine sertie d'un saphir de 8 carats.</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-img" style="background-image: url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=2000&auto=format&fit=crop');"></div>
+                <div class="item-info">
+                    <h3>Éclat Lunaire</h3>
+                    <p>Collier en or blanc et diamants taille marquise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">L'Écrin</div>
+        <p style="font-size: 0.8rem; letter-spacing: 2px; opacity: 0.6;">© 2026 HAUTE BIJOUTERIE FRANÇAISE.</p>
+    </footer>
+
+    <script>
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Simple parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX * 2) / 100;
+            const y = (window.innerHeight - e.pageY * 2) / 100;
+            document.querySelector('.hero-bg').style.transform = `translateX(${x}px) translateY(${y}px) scale(1.1)`;
+        });
+    </script>
+</body>
+</html>
