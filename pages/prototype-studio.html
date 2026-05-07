@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Studio | Sérénité & Équilibre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky: #f0f4f8;
+            --ocean: #102a43;
+            --cloud: #ffffff;
+            --soft-blue: #bcccdc;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--sky);
+            color: var(--ocean);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            padding: 40px 8%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-weight: 200;
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        .services {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 100px;
+        }
+
+        .service-card {
+            background: var(--cloud);
+            padding: 40px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div style="font-weight: 600; letter-spacing: 2px;">LE STUDIO</div>
+        <div style="font-size: 0.8rem; letter-spacing: 1px;">RÉSERVER</div>
+    </nav>
+
+    <section class="hero">
+        <h1>Respirez.</h1>
+        <p>Un espace dédié à la reconnexion de soi à travers le yoga et la méditation guidée.</p>
+        <div class="services">
+            <div class="service-card">
+                <h3>Vinyasa</h3>
+                <p>Énergie et mouvement fluide.</p>
+            </div>
+            <div class="service-card">
+                <h3>Yin</h3>
+                <p>Profondeur et lâcher-prise.</p>
+            </div>
+            <div class="service-card">
+                <h3>Méditation</h3>
+                <p>Calme mental et clarté.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
