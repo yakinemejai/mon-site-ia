@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Artisan | Le Goût du Vrai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --clay: #a68a64;
+            --wheat: #f5ebe0;
+            --stone: #463f3a;
+            --transition: all 0.5s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--wheat);
+            color: var(--stone);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--stone);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .hero {
+            padding: 0 10% 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 20px 20px 0 var(--clay);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: var(--stone);
+            color: var(--wheat);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+        }
+
+        .story {
+            background: #fff;
+            padding: 100px 10%;
+            text-align: center;
+        }
+
+        .story p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--clay);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">L'Artisan</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Le pain comme autrefois.</h1>
+            <p>Farines locales, levain naturel et patience. Découvrez une expérience gustative authentique au cœur de notre atelier.</p>
+            <a href="#" class="btn">Notre Histoire</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=2072&auto=format&fit=crop" alt="Pain artisanal">
+        </div>
+    </section>
+
+    <section class="story">
+        <p>"Nous ne faisons pas que du pain, nous perpétuons un héritage. Chaque geste est une promesse de qualité et de respect de la terre."</p>
+    </section>
+</body>
+</html>
